@@ -1,0 +1,10 @@
+atom.cmo :
+atom.cmx :
+hydrogen.cmo : atom.cmo
+hydrogen.cmx : atom.cmx
+oxygen.cmo : atom.cmo
+oxygen.cmx : atom.cmx
+carbon.cmo : atom.cmo
+carbon.cmx : atom.cmx
+main.cmo : hydrogen.cmo
+main.cmx : hydrogen.cmx
