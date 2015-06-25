@@ -3,3 +3,7 @@ a.out
 *~
 *.cmx
 *.o
+*.cmo
+*.byt
+*.opt
+test
