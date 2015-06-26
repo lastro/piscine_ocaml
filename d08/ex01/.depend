@@ -6,7 +6,7 @@ oxygen.cmo : atom.cmo
 oxygen.cmx : atom.cmx
 carbon.cmo : atom.cmo
 carbon.cmx : atom.cmx
-molecule.cmo : atom.cmo
-molecule.cmx : atom.cmx
+molecule.cmo : hydrogen.cmo atom.cmo
+molecule.cmx : hydrogen.cmx atom.cmx
 main.cmo : oxygen.cmo hydrogen.cmo carbon.cmo
 main.cmx : oxygen.cmx hydrogen.cmx carbon.cmx
