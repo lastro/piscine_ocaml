@@ -6,7 +6,7 @@
 (*   By: tlepetit <thomas.lepetit1990@gmai...>                                *)
 (*                                                                            *)
 (*   Created: 2015/06/25 16:26:34 by tlepetit                                 *)
-(*   Updated: 2015/06/25 18:28:39 by tlepetit                                 *)
+(*   Updated: 2015/11/12 17:25:46 by tlepetit                                 *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
@@ -16,6 +16,7 @@ let () =
   doctor#talk;
   print_endline "A dalek appears!";
   print_endline dalek#to_string;
+  dalek#talk;
   print_endline "Horror! The dalek attacks my henchman!";
   dalek#exterminate doctor#get_sidekick;
   print_endline doctor#to_string;

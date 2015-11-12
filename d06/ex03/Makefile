@@ -1,9 +1,9 @@
-NAME = test_dalek
+NAME = test_ex03
 
-SOURCES = people.ml doctor.ml dalek.ml main.ml
+SOURCES = ex03.ml
 
-CAMLC = ocamlc
-CAMLOPT = ocamlopt
+CAMLC = ocamlc.opt
+CAMLOPT = ocamlopt.opt
 CAMLDEP = ocamldep
 
 OBJS = $(SOURCES:.ml=.cmo)
@@ -29,11 +29,11 @@ $(NAME).opt: $(OPTOBJS)
 %.cmo: %.ml
 	$(CAMLC) -c $<
 
-%.cmi: %.mli 
+%.cmi: %.mli
 	$(CAMLC) -c $<
 
-%.cmx: %.ml 
-	$(CAMLOPT) -c $< 
+%.cmx: %.ml
+	$(CAMLOPT) -c $<
 
 clean:
 	rm -f *~
