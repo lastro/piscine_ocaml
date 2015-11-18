@@ -1,4 +1,4 @@
-NAME = test
+NAME = test_army
 
 SOURCES = army.ml people.ml doctor.ml dalek.ml main.ml
 
@@ -15,7 +15,7 @@ LIBS =
 all: depend $(NAME)
 
 $(NAME): opt byt
-	ls $(NAME) || ln -s $(NAME).byt $(NAME)
+	(ls $(NAME) 2>/dev/null) || ln -s $(NAME).byt $(NAME)
 
 opt: $(NAME).opt
 byt: $(NAME).byt
@@ -36,6 +36,7 @@ $(NAME).opt: $(OPTOBJS)
 	$(CAMLOPT) -c $< 
 
 clean:
+	rm -f *~
 	rm -f $(OBJS) $(OPTOBJS) $(CMI)
 	rm -f $ $(SOURCES:.ml=.o)
 

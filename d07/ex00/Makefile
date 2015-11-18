@@ -36,6 +36,7 @@ $(NAME).opt: $(OPTOBJS)
 	$(CAMLOPT) -c $< 
 
 clean:
+	rm -f *~
 	rm -f $(OBJS) $(OPTOBJS) $(CMI)
 	rm -f $ $(SOURCES:.ml=.o)
 
