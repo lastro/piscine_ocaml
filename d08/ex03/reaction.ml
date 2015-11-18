@@ -1,20 +1,20 @@
 (* ************************************************************************** *)
 (*                                                                            *)
 (*                                                                            *)
-(*   atom.ml                                                                  *)
+(*   reaction.ml                                                              *)
 (*                                                                            *)
 (*   By: tlepetit <thomas.lepetit1990@gmai...>                                *)
 (*                                                                            *)
-(*   Created: 2015/06/25 19:45:05 by tlepetit                                 *)
-(*   Updated: 2015/11/13 12:29:17 by tlepetit                                 *)
+(*   Created: 2015/11/13 18:42:27 by tlepetit                                 *)
+(*   Updated: 2015/11/13 19:03:24 by tlepetit                                 *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-class virtual atom name symbol atomic_number =
-object (self)
-  method name = name
-  method symbol = symbol
-  method atomic_number = atomic_number
-  method to_string = "Atom: " ^ name ^ " Symbol: " ^ symbol ^ " Atomic number: " ^ (string_of_int atomic_number)
-  method equals (a:atom) = (name = a#name) && (symbol = a#symbol) && (atomic_number = a#atomic_number)
+class virtual reaction (lst1:((Molecule.molecule * int) list)) (lst2:((Molecule.molecule * int) list)) =
+object
+  method virtual get_start: (Molecule.molecule * int) list
+  method virtual get_result: (Molecule.molecule * int) list
+  method virtual balance: reaction
+  method virtual is_balanced: bool
+  method virtual  to_string: string
 end

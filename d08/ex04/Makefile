@@ -1,6 +1,7 @@
-NAME = test_atom
+NAME = test_alkane_combustion
 
-SOURCES = atom.ml hydrogen.ml oxygen.ml carbon.ml main.ml
+SOURCES = atom.ml hydrogen.ml carbon.ml oxygen.ml molecule.ml dioxygene.ml water.ml carbon_dioxyde.ml \
+	alkane.ml methane.ml ethane.ml octane.ml reaction.ml alkane_combustion.ml main.ml
 
 CAMLC = ocamlc
 CAMLOPT = ocamlopt

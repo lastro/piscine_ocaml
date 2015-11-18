@@ -1,0 +1,20 @@
+atom.cmo :
+atom.cmx :
+hydrogen.cmo : atom.cmo
+hydrogen.cmx : atom.cmx
+carbon.cmo : atom.cmo
+carbon.cmx : atom.cmx
+molecule.cmo : hydrogen.cmo carbon.cmo atom.cmo
+molecule.cmx : hydrogen.cmx carbon.cmx atom.cmx
+alkane.cmo : molecule.cmo hydrogen.cmo carbon.cmo
+alkane.cmx : molecule.cmx hydrogen.cmx carbon.cmx
+methane.cmo : alkane.cmo
+methane.cmx : alkane.cmx
+ethane.cmo : alkane.cmo
+ethane.cmx : alkane.cmx
+octane.cmo : alkane.cmo
+octane.cmx : alkane.cmx
+reaction.cmo : molecule.cmo
+reaction.cmx : molecule.cmx
+main.cmo : octane.cmo methane.cmo ethane.cmo
+main.cmx : octane.cmx methane.cmx ethane.cmx

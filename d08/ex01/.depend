@@ -6,7 +6,23 @@ oxygen.cmo : atom.cmo
 oxygen.cmx : atom.cmx
 carbon.cmo : atom.cmo
 carbon.cmx : atom.cmx
-molecule.cmo : hydrogen.cmo atom.cmo
-molecule.cmx : hydrogen.cmx atom.cmx
-main.cmo : oxygen.cmo hydrogen.cmo carbon.cmo
-main.cmx : oxygen.cmx hydrogen.cmx carbon.cmx
+nitrogen.cmo : atom.cmo
+nitrogen.cmx : atom.cmx
+molecule.cmo : hydrogen.cmo carbon.cmo atom.cmo
+molecule.cmx : hydrogen.cmx carbon.cmx atom.cmx
+trinitrotoluene.cmo : oxygen.cmo nitrogen.cmo molecule.cmo hydrogen.cmo \
+    carbon.cmo
+trinitrotoluene.cmx : oxygen.cmx nitrogen.cmx molecule.cmx hydrogen.cmx \
+    carbon.cmx
+water.cmo : oxygen.cmo molecule.cmo hydrogen.cmo
+water.cmx : oxygen.cmx molecule.cmx hydrogen.cmx
+carbon_dioxyde.cmo : oxygen.cmo molecule.cmo carbon.cmo
+carbon_dioxyde.cmx : oxygen.cmx molecule.cmx carbon.cmx
+nitrate.cmo : oxygen.cmo nitrogen.cmo molecule.cmo
+nitrate.cmx : oxygen.cmx nitrogen.cmx molecule.cmx
+adenine.cmo : nitrogen.cmo molecule.cmo hydrogen.cmo carbon.cmo
+adenine.cmx : nitrogen.cmx molecule.cmx hydrogen.cmx carbon.cmx
+main.cmo : water.cmo trinitrotoluene.cmo nitrate.cmo carbon_dioxyde.cmo \
+    adenine.cmo
+main.cmx : water.cmx trinitrotoluene.cmx nitrate.cmx carbon_dioxyde.cmx \
+    adenine.cmx

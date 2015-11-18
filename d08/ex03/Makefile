@@ -1,6 +1,6 @@
-NAME = test_atom
+NAME = test_reaction
 
-SOURCES = atom.ml hydrogen.ml oxygen.ml carbon.ml main.ml
+SOURCES = atom.ml hydrogen.ml carbon.ml molecule.ml	alkane.ml methane.ml ethane.ml octane.ml reaction.ml main.ml 
 
 CAMLC = ocamlc
 CAMLOPT = ocamlopt

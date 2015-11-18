@@ -1,6 +1,7 @@
-NAME = test
+NAME = test_molecule
 
-SOURCES = atom.ml hydrogen.ml oxygen.ml carbon.ml molecule.ml main.ml
+SOURCES = atom.ml hydrogen.ml oxygen.ml carbon.ml nitrogen.ml molecule.ml trinitrotoluene.ml \
+	water.ml carbon_dioxyde.ml nitrate.ml adenine.ml main.ml 
 
 CAMLC = ocamlc
 CAMLOPT = ocamlopt
@@ -15,7 +16,7 @@ LIBS =
 all: depend $(NAME)
 
 $(NAME): opt byt
-	ls $(NAME) || ln -s $(NAME).byt $(NAME)
+	(ls $(NAME) 2>/dev/null) || ln -s $(NAME).byt $(NAME)
 
 opt: $(NAME).opt
 byt: $(NAME).byt
@@ -36,6 +37,7 @@ $(NAME).opt: $(OPTOBJS)
 	$(CAMLOPT) -c $< 
 
 clean:
+	rm -f *~
 	rm -f $(OBJS) $(OPTOBJS) $(CMI)
 	rm -f $ $(SOURCES:.ml=.o)
 

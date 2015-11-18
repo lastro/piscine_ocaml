@@ -1,0 +1,32 @@
+atom.cmo :
+atom.cmx :
+hydrogen.cmo : atom.cmo
+hydrogen.cmx : atom.cmx
+carbon.cmo : atom.cmo
+carbon.cmx : atom.cmx
+oxygen.cmo : atom.cmo
+oxygen.cmx : atom.cmx
+molecule.cmo : hydrogen.cmo carbon.cmo atom.cmo
+molecule.cmx : hydrogen.cmx carbon.cmx atom.cmx
+dioxygene.cmo : oxygen.cmo molecule.cmo
+dioxygene.cmx : oxygen.cmx molecule.cmx
+water.cmo : oxygen.cmo molecule.cmo hydrogen.cmo
+water.cmx : oxygen.cmx molecule.cmx hydrogen.cmx
+carbon_dioxyde.cmo : oxygen.cmo molecule.cmo carbon.cmo
+carbon_dioxyde.cmx : oxygen.cmx molecule.cmx carbon.cmx
+alkane.cmo : molecule.cmo hydrogen.cmo carbon.cmo
+alkane.cmx : molecule.cmx hydrogen.cmx carbon.cmx
+methane.cmo : alkane.cmo
+methane.cmx : alkane.cmx
+ethane.cmo : alkane.cmo
+ethane.cmx : alkane.cmx
+octane.cmo : alkane.cmo
+octane.cmx : alkane.cmx
+reaction.cmo : molecule.cmo
+reaction.cmx : molecule.cmx
+alkane_combustion.cmo : water.cmo reaction.cmo hydrogen.cmo dioxygene.cmo \
+    carbon_dioxyde.cmo carbon.cmo alkane.cmo
+alkane_combustion.cmx : water.cmx reaction.cmx hydrogen.cmx dioxygene.cmx \
+    carbon_dioxyde.cmx carbon.cmx alkane.cmx
+main.cmo : octane.cmo methane.cmo ethane.cmo
+main.cmx : octane.cmx methane.cmx ethane.cmx
