@@ -6,11 +6,11 @@
 (*   By: tlepetit <thomas.lepetit1990@gmai...>                                *)
 (*                                                                            *)
 (*   Created: 2015/06/24 20:14:18 by tlepetit                                 *)
-(*   Updated: 2015/06/24 21:26:23 by tlepetit                                 *)
+(*   Updated: 2015/11/10 16:50:50 by tlepetit                                 *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
-module Test : Hashtbl.HashedType =
+module Test : (Hashtbl.HashedType with type t = string) =
   struct
 	type t = string
 	let equal s t =
