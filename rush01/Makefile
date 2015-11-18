@@ -1,6 +1,6 @@
 NAME = tama
 
-SOURCES = main.ml
+SOURCES = src/main.ml src/state.ml
 
 CAMLC = ocamlc.opt
 CAMLOPT = ocamlopt.opt
@@ -10,7 +10,7 @@ OBJS = $(SOURCES:.ml=.cmo)
 OPTOBJS = $(SOURCES:.ml=.cmx)
 CMI = $(SOURCES:.ml=.cmi)
 
-LIBS = $(WITHGRAPHICS)
+LIBS = $(WITHGRAPHICS) unix.cma
 WITHGRAPHICS = graphics.cma -cclib -lgraphics
 
 all: depend $(NAME)
