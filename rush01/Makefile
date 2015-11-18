@@ -10,7 +10,7 @@ OBJS = $(SOURCES:.ml=.cmo)
 OPTOBJS = $(SOURCES:.ml=.cmx)
 CMI = $(SOURCES:.ml=.cmi)
 
-LIBS = $(WITHGRAPHICS) unix.cma
+LIBS = $(WITHGRAPHICS) unix.cma -thread threads.cma
 WITHGRAPHICS = graphics.cma -cclib -lgraphics
 
 all: depend $(NAME)
@@ -28,16 +28,17 @@ $(NAME).opt: $(OPTOBJS)
 	$(CAMLOPT) -o $@ $(LIBS:.cma=.cmxa) $(OPTOBJS)
 
 %.cmo: %.ml
-	$(CAMLC) -c $<
+	$(CAMLC) -thread -c $<
 
 %.cmi: %.mli 
-	$(CAMLC) -c $<
+	$(CAMLC) -thread -c $<
 
 %.cmx: %.ml 
-	$(CAMLOPT) -c $< 
+	$(CAMLOPT) -thread -c $< 
 
 clean:
 	rm -f *~
+	rm -f src/*~
 	rm -f $(OBJS) $(OPTOBJS) $(CMI)
 	rm -f $ $(SOURCES:.ml=.o)
 

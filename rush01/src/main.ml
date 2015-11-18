@@ -6,12 +6,11 @@
 (*   By: tlepetit <thomas.lepetit1990@gmai...>                                *)
 (*                                                                            *)
 (*   Created: 2015/11/18 15:54:47 by tlepetit                                 *)
-(*   Updated: 2015/11/18 16:27:09 by tlepetit                                 *)
 (*                                                                            *)
 (* ************************************************************************** *)
 
 let minisleep (sec: float) =
-  ignore (Unix.select [] [] [] sec)
+	Thread.delay sec
 
 let () =
   Graphics.open_graph " 800x600";
@@ -27,5 +26,3 @@ let () =
 	minisleep (max 0. (0.1 +. time_begin_loop -. (Sys.time ())));
   in
   frame_state ();
-		
-	
